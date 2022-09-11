@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  background-color: #333;
+  height: 30vh;
+  display: flex; /*inline-flex: Se comporta como caja en linea*/
+  flex-direction: row-reverse; /*|row|column|row-reverse|column-reverse|*/
+  flex-wrap: nowrap; /*default mantener a todos los elementos en una sola linea*/
+  flex-wrap: wrap-reverse; /*|nowrap|wrap|wrap-reverse|*/
+  flex-flow: column wrap; /*shorcut (flex-direction flex-wrap)*/
+}
+
+.item {
+  border: medium solid #999;
+  width: 20%;
+  height: 20%;
+  background-color: #666;
+}
