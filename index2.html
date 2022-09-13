@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Prácticos FlexBox</title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .titulares {
+        background-color: #222;
+        color: #eee;
+        padding: 1rem;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu ul {
+        list-style-type: none;
+    }
+
+    .heroe-image {
+        background-image: url("https://placeimg.com/1280/720/animals");
+        /* background-color: rgba(0, 0, 0, .95); */
+        color: #fff;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+    }
+
+    .heroe-image div {
+        background-color: rgba(0, 0, 0, .60);
+        min-height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .heroe-image h1 {
+        font-size: 5vw;
+    }
+
+    .flex-responsive{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .flex-responsive-item{
+        flex: 1 1 200px;
+        border: thin solid #f60;
+    }
+
+    @media(min-width:1024px) {
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .menu ul {
+            display: flex;
+        }
+
+        .menu li {
+            padding: .5rem;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+        }
+
+        .flex-item {
+            flex-flow: 0 0 50%;
+        }
+
+        .flex-order-1 {
+            order: 1;
+        }
+
+        .flex-row-reverse {
+            flex-direction: row-reverse;
+        }
+    }
+</style>
+
+<body>
+    <header class="titulares header">
+        <div class="logo">Logo</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Sección 1</a></li>
+                <li><a href="#">Sección 2</a></li>
+                <li><a href="#">Sección 3</a></li>
+                <li><a href="#">Sección 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="heroe-image">
+            <div>
+                <h1>FlexBox</h1>
+            </div>
+        </article>
+        <section class="flex-container flex-row-reverse">
+            <article class="flex-item">
+                <h2>Título</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi repellat eveniet tempora dolorum
+                    corrupti unde iure. Blanditiis ea expedita laborum maiores eum porro eius ex sint natus, deleniti
+                    nemo nulla?
+                </p>
+            </article>
+            <article class="flex-item">
+                <img src="https://placeimg.com/400/400/arch" alt="personas">
+            </article>
+        </section>
+        <section class="flex-container">
+            <article class="flex-item">
+                <h2>Título</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi repellat eveniet tempora dolorum
+                    corrupti unde iure. Blanditiis ea expedita laborum maiores eum porro eius ex sint natus, deleniti
+                    nemo nulla?
+                </p>
+            </article>
+            <article class="flex-item">
+                <img src="https://placeimg.com/400/400/people" alt="personas">
+            </article>
+        </section>
+        <h2>Responsive Design sin Media Queries usando FlexBox</h2>
+        <section class="flex-responsive">
+            <aritcle class="flex-responsive-item">Item Responsivo 1</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 2</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 3</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 4</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 5</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 6</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 7</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 8</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 9</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 10</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 11</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 12</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 13</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 14</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 15</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 16</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 17</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 18</aritcle>
+            <aritcle class="flex-responsive-item">Item Responsivo 19</aritcle>
+        </section>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur corporis repellendus illum impedit quo.
+        Beatae suscipit eligendi, delectus sunt nihil est nulla quibusdam deleniti magnam totam quisquam nostrum quidem
+        molestias.</p>
+    <footer class="titulares">
+        <h2>Sticky Footer</h2>
+    </footer>
+</body>
+
+</html>

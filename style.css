@@ -13,7 +13,7 @@ body {
 
 .container {
   background-color: #333;
-  height: 30vh;
+  height: 400px;
   width: 100%;
   display: flex; /*inline-flex: Se comporta como caja en linea*/
   flex-direction: row-reverse; /*|row|column|row-reverse|column-reverse|*/
@@ -35,7 +35,23 @@ body {
   /* Cuando la caja flexbox tenga espacio sobrante se reparte dependiendo de las proporciones que se tenga, es la habilidad o el factor de crecer, valor por defecto es 0, NO se aceptan valores negativos */
   flex-shrink: 1;
   /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos */
-  flex-basis: auto;
+  flex-basis: auto; /*depende de si es una fila o columna*/
+  flex-basis: 100px; /*flex-basis tiene mayor especificidad que la propiedad width*/
+  /* width: 200px; */
+  /* Es el tamaño del elemento hijo dentro de la línea de la caja flexbox
+        Si la caja flexbox tiene dirección de fila, flex-basis representa el width
+        Si la caja flexbox tiene dirección de columna, flex-basis representa el height
+        Valor por defecto auto */
+  /*flex: 0 1 auto;flex(shorthand): grow shrink basis*/
+  order: 0;
+  /* Representa el orden que tendrán los elementos hijos en la caja flexbox
+        Valor por defecto 0
+        Se aceptan valores positivos y negativos
+        Un valor menor siempre irá antes que un valor mayor */
+
+  align-self: stretch;
+  /* stretch | flex-start | flex-end | center | baseline */
+  /* Sobreescribe el valor de la propiedad align-items sólo para el elemento hijo especificado */
 }
 
 /*flex-shrink: 2
@@ -47,12 +63,11 @@ body {
 2. 78.89 - 2*9.1675 = 60.55 
 */
 
-
-
-
-.item:nth-child(2){
+.item:nth-child(2) {
   flex-grow: 0;
   flex-shrink: 2;
+  order: 1;
+  align-self: center; 
 }
 /* .item:nth-child(2),
 .item:nth-child(17) {
